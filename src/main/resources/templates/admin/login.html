@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>博客管理登录</title>
+    <div th:replace="admin/_fragments-admin::link" th:remove="tag"></div>
+</head>
+
+<body >
+<br/>
+<br/>
+<br/>
+<!--中间区域-->
+<div class="m-container-small m-padded-tb-massive" style="max-width:30em!important; ">
+    <div class="ui container">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui teal image header">
+                    <div class="content">
+                        后台管理登录
+                    </div>
+                </h2>
+                <form class="ui large form" method="post" th:action="@{/adminlogin}">
+                    <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"> </div>
+
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" required oninvalid="setCustomValidity('请输入用户名');" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" required oninvalid="setCustomValidity('请输入密码');" placeholder="密码">
+                            </div>
+                        </div>
+                        <button type="submit" class="ui fluid large teal submit button">登  录</button>
+                    </div>
+
+                    <div class="ui error message"></div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--底部footer-->
+<div th:replace="admin/_fragments-admin::js"></div>
+
+</body>
+</html>

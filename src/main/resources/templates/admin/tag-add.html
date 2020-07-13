@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>标签新增</title>
+</head>
+<div th:replace="admin/_fragments-admin::link" th:remove="tag"></div>
+<body>
+<!--导航-->
+<div th:replace="admin/_fragments-admin::nav-admin(2)"></div>
+
+<div class="ui attached pointing menu">
+    <div class="ui  container">
+        <div class=" right menu">
+            <a href="#" th:href="@{/admintoaddtag}" class="item active" >新增</a>
+            <a href="#" th:href="@{/admintotags}" class="item teal">列表</a>
+        </div>
+    </div>
+</div>
+<!--中间区域-->
+<div class="m-padded-tb-big m-container-small">
+  <div class="ui  container">
+    <form action="#" method="post" class="ui form"  th:action="@{/adminaddtag}">
+        <div class="field">
+            <p th:text="${msg}"></p>
+        </div>
+        <div class="field">
+            <div class="ui left labeled input">
+                <label class="ui teal basic label">名称</label>
+                    <input type="text" name="name" required oninvalid="setCustomValidity('请输入标签名称');" placeholder="标签名称">
+            </div>
+        </div>
+        <div class="ui error message"></div>
+        <div class="ui right aligned container">
+            <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+            <button   class="ui teal submit button" >添加</button>
+        </div>
+    </form>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--底部footer-->
+<footer th:replace="admin/_fragments-admin::footer"></footer>
+<div th:replace="admin/_fragments-admin::js"></div>
+<script>
+     $('.menu.toggle').on("click",function () {
+           $('.m-item').toggleClass("m-mobile-hide");
+     })
+      $(".ui.dropdown").dropdown({
+          on:'hover'
+      })
+</script>
+</body>
+</html>

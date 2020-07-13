@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>标签修改</title>
+</head>
+<link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css}">
+<link rel="stylesheet" th:href="@{../css/m1.css}" type="text/css" >
+<body>
+<!--导航-->
+<div th:replace="admin/_fragments-admin::nav-admin(3)"></div>
+
+<div class="ui attached pointing menu">
+    <div class="ui  container">
+        <div class=" right menu">
+            <a href="#" th:href="@{/admintoaddtag}" class="item" >新增</a>
+            <a href="#" th:href="@{/admintotags}" class="item teal">列表</a>
+        </div>
+    </div>
+</div>
+<!--中间区域-->
+<div class="m-padded-tb-big m-container-small">
+  <div class="ui  container">
+    <form action="#" method="post" class="ui form"  th:object="${tag}" th:action="@{/adminupdatetag}">
+        <div class="field">
+            <div class="ui left labeled input">
+                <label class="ui teal basic label">名称</label>
+                <input hidden th:value="*{id}" name="id">
+                <input type="text" name="name" class="" th:value="*{name}">
+            </div>
+        </div>
+        <div class="ui error message"></div>
+        <div class="ui right aligned container">
+            <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+            <button   class="ui teal submit button" >修改</button>
+        </div>
+    </form>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--底部footer-->
+<footer th:replace="admin/_fragments-admin::footer"></footer>
+<script th:src="@{../js/jquery-3.1.0.js}" ></script>
+<script>
+     $('.menu.toggle').on("click",function () {
+           $('.m-item').toggleClass("m-mobile-hide");
+     })
+      $(".ui.dropdown").dropdown({
+          on:'hover'
+      })
+</script>
+</body>
+</html>

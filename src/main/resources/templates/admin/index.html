@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>后台管理</title>
+</head>
+<div th:replace="admin/_fragments-admin::link" th:remove="tag"></div>
+<body >
+<!--导航-->
+<div th:replace="admin/_fragments-admin::nav-admin(0)"></div>
+<div class="ui attached pointing menu">
+    <div class="ui  container">
+        <div class=" right menu">
+            <a href="#" th:href="@{/admintypesinput}" class="item" >新增</a>
+            <a href="#" th:href="@{/admintypes}" class="item teal">列表</a>
+        </div>
+    </div>
+</div>
+<!--中间区域-->
+<div class="m-padded-tb-big m-container-small">
+  <div class="ui  container">
+    <div class="ui success large message" th:object="${session.user}">
+        <h2>Hi,</h2>
+        <p> <span th:text="*{userName}"></span>，欢迎登录</p>
+    </div>
+      <img th:src="@{../images/1.png}" width="1000" height="400" class="ui rounded bordered fluid image">
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--底部footer-->
+<div th:replace="admin/_fragments-admin::footer"></div>
+<div th:replace="admin/_fragments-admin::js"></div>
+<script>
+     $('.menu.toggle').on("click",function () {
+           $('.m-item').toggleClass("m-mobile-hide");
+     })
+      $(".ui.dropdown").dropdown({
+          on:'hover'
+      })
+</script>
+</body>
+</html>

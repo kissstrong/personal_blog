@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<div th:replace="error/_fragments-error::link" th:remove="tag"></div>
+<body>
+<div th:replace="error/_fragments-error::nav-cus(10)"></div>
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message">
+        <div class="ui container">
+            <h2>404</h2>
+            <p>对不起,你访问的页面不存在</p>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div th:replace="error/_fragments-error::footer"></div>
+<div th:replace="error/_fragments-error::js"></div>
+<script>
+    $('.menu.toggle').on("click",function () {
+        $('.m-item').toggleClass("m-mobile-hide");
+    })
+</script>
+</body>
+</html>

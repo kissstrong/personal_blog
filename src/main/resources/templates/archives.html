@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>归档</title>
+</head>
+<div th:replace="~{_fragments::link}" th:remove="tag"></div>
+<body >
+<!--导航-->
+<div th:replace="~{_fragments::nav-cus(4)}"></div>
+<!--中间区域-->
+<div class="m-padded-tb-big m-container-small">
+    <div class="ui container">
+        <div class="ui top attached segment">
+            <div class="ui two column grid middle aligned">
+                <div class="column">
+                    <h3 class="ui teal header">归档</h3>
+                </div>
+                <div class="column right aligned ">
+                    共<h3 class="ui orange header m-inline-block m-text-thin" th:text="${count}"> 52 </h3>篇博客
+                </div>
+            </div>
+         </div>
+       <div th:each="blog:${blogs}">
+           <div class="ui vertical menu fluid">
+                <span>
+                    <i class="teal circle icon "></i><span th:text="${blog.title}"></span>
+                    <div class="ui teal basic left pointing label m-padded-tb-mini" th:text="${#dates.format(blog.updateTime,'MMMdd')}">9月03日</div>
+                </span>
+                   <div class="ui orange basic left pointing label m-padded-tb-mini" th:text="${blog.flag}">原创</div>
+               </a>
+           </div>
+       </div>
+
+
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--底部footer-->
+<footer th:replace="~{_fragments::footer}"></footer>
+<div th:replace="~{_fragments::js}"></div>
+<script>
+     $('.menu.toggle').on("click",function () {
+           $('.m-item').toggleClass("m-mobile-hide");
+     })
+
+</script>
+</body>
+</html>

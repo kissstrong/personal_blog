@@ -1,0 +1,11 @@
+2020-07-07 07:56:52.481  INFO 6172 --- [restartedMain] com.cyz.PersonalBlogApplication          : Starting PersonalBlogApplication on WIN-3EHTTE3SS16 with PID 6172 (D:\developertools\allcodes\personal_blog\target\classes started by Administrator in D:\developertools\allcodes\personal_blog)
+2020-07-07 07:56:52.485  INFO 6172 --- [restartedMain] com.cyz.PersonalBlogApplication          : The following profiles are active: pro
+2020-07-07 07:56:55.281  WARN 6172 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-07 07:56:55.613  WARN 6172 --- [task-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-07-07 07:56:55.615  WARN 6172 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-07-07 07:56:55.770  INFO 6172 --- [restartedMain] com.cyz.PersonalBlogApplication          : Started PersonalBlogApplication in 3.789 seconds (JVM running for 5.681)
+2020-07-07 08:03:32.642  INFO 3344 --- [restartedMain] com.cyz.PersonalBlogApplication          : Starting PersonalBlogApplication on WIN-3EHTTE3SS16 with PID 3344 (D:\developertools\allcodes\personal_blog\target\classes started by Administrator in D:\developertools\allcodes\personal_blog)
+2020-07-07 08:03:32.645  INFO 3344 --- [restartedMain] com.cyz.PersonalBlogApplication          : The following profiles are active: pro
+2020-07-07 08:03:36.081  WARN 3344 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-07 08:03:36.445  WARN 3344 --- [task-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-07-07 08:03:36.625  INFO 3344 --- [restartedMain] com.cyz.PersonalBlogApplication          : Started PersonalBlogApplication in 4.525 seconds (JVM running for 7.103)

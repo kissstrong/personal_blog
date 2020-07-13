@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>关于我</title>
+</head>
+<div th:replace="~{_fragments::link}" th:remove="tag"></div>
+<body >
+<!--导航-->
+<div th:replace="~{_fragments::nav-cus(5)}"></div>
+
+<!--中间区域-->
+<div class="m-padded-tb-big container">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="eleven wide column">
+                <div class="ui segment">
+                    <img src="images/5.png" class="ui rounded image">
+                </div>
+            </div>
+            <div class="five wide column">
+                <div class="ui top attached segment">
+                    <div class="ui header">关于我</div>
+                </div>
+                <div class="ui attached segment">
+                  <p class="m-text-thin">陈业壮，一个很勤奋的程序员，一个终身学习的帅哥</p>
+                  <p class="m-text-thin">热爱编程，喜欢折腾，正在探索高效学习编程技术方法</p>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui orange basic left pointing label m-margin-tb-mini">编程</div>
+                    <div class="ui orange basic left pointing label m-margin-tb-mini">学习</div>
+                    <div class="ui orange basic left pointing label m-margin-tb-mini">看代码</div>
+                    <div class="ui orange basic left pointing label m-margin-tb-mini">看视频</div>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">java</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">spring</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">mybatis</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">springboot</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">java</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">spring</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">mybatis</div>
+                    <div class="ui blue basic left pointing label m-margin-tb-mini">springboot</div>
+                </div>
+                <div class="ui attached segment">
+                    <a href="#" class="ui circular icon button"><i class="github icon"></i> </a>
+                    <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i> </a>
+                    <a href="#" class="ui qq circular icon button" data-content="1612070456" data-position="bottom center"><i class="qq icon"></i> </a>
+                </div>
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img src="images/erweima.png" class="ui rounded image" width="100" height="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--底部footer-->
+<footer th:replace="~{_fragments::footer}"></footer>
+
+<div th:replace="~{_fragments::js}"></div>
+<script>
+     $('.menu.toggle').on("click",function () {
+           $('.m-item').toggleClass("m-mobile-hide");
+     })
+     $(".qq").popup()
+     $('.wechat').popup({
+         popup : $('.wechat-qr.popup'),
+         on : 'hover',
+         position: 'bottom center'
+     })
+</script>
+</body>
+</html>
