@@ -28,7 +28,7 @@
             <div class="ui padded vertical segment m-mobile-lr-clear" th:each="blog:${page.content}">
                 <div class="ui mobile reversed stackable grid">
                     <div class="eleven wide column">
-                        <h3 class="ui header m-black" href="" th:text="${blog.title}">你真财富自由吗?</h3>
+                        <a th:href="@{/blog/{id}(id=${blog.id})}"><h3 class="ui header m-black"  th:text="${blog.title}">你真财富自由吗?</h3></a>
                         <p th:text="${blog.description}"> 是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已....</p>
                         <div class="ui grid">
                             <div class="eleven wide column">
